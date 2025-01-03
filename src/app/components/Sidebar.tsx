@@ -1,5 +1,6 @@
 import ghibliLogo from '../../../public/Gibli_logo_complete.png'
 import Image from "next/image";
+import NavLinks from './NavLinks';
 
 export default function SideNav() {
     return (
@@ -7,6 +8,7 @@ export default function SideNav() {
 
             < div className="w-40" >
                 <Image src={ghibliLogo} alt="Ghibli Logo" />
+                <NavLinks />
             </div >
 
 

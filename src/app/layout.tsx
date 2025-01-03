@@ -16,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Favicon.ico" />
+      </head>
       <body className={`${redHatDisplay.className} antialiased`}>
         <div className="flex h-screen">
 

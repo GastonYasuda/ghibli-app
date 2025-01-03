@@ -1,8 +1,23 @@
+/* eslint-disable @next/next/no-img-element */
+import { fetchGhibli } from "./data/data";
 
-export default function Home() {
+export default async function Home() {
+
+  const ghibliAllFilms = await fetchGhibli('')
+
+
   return (
-    <div >
-      hola! soy ghibli
+    <div className="ghibliTest">
+
+      {ghibliAllFilms.map((eachMovie, index) => {
+        return (
+          <div key={index} className="mb:w-full">
+            <h1>{eachMovie.title}</h1>
+            <img src={eachMovie.image} alt="Movie poster" />
+          </div>
+        )
+      })}
+
     </div>
   );
 }
