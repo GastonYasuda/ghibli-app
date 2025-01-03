@@ -7,7 +7,7 @@ export default async function Home() {
 
 
   return (
-    <div className="ghibliTest">
+    <div>
 
       {ghibliAllFilms.map((eachMovie, index) => {
         return (
