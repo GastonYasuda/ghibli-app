@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./Styles/globals.css";
 import { redHatDisplay } from "@/ui/fonts";
+import Sidebar from '../app/components/Sidebar';
 
 
 export const metadata: Metadata = {
@@ -15,10 +16,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${redHatDisplay.className} antialiased`}
-      >
-        {children}
+      <body className={`${redHatDisplay.className} antialiased`}>
+        <div className="flex h-screen">
+
+          <div className="w-full flex flex-col md:flex-row ">
+
+            <Sidebar />
+
+            <div className="md:w-full flex-grow p-6 md:p-12">{children}</div>
+
+          </div>
+
+        </div>
       </body>
     </html>
   );
