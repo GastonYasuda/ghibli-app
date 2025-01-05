@@ -5,7 +5,7 @@ import { fetchGhibliById } from "../../data/data"
 import { useEffect, useState } from "react";
 
 interface movieDetailProps {
-    pathId: string | undefined;
+    pathId?: string;
 }
 
 export default function MovieDetail({ pathId }: movieDetailProps) {
