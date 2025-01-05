@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 // src/app/[title]/movieDetail/page.tsx
 
-'use client'; // Asegúrate de usar 'use client' si estás trabajando con código de cliente en Next.js 13
-
-import { GhibliType } from "@/Types/ghibliType"; // Asegúrate de que la ruta de importación sea correcta
-import { fetchGhibliById } from "../../data/data"; // Verifica la ruta correcta
+'use client';
+import { GhibliType } from "@/Types/ghibliType";
+import { fetchGhibliById } from "../../data/data";
 import { useEffect, useState } from "react";
 
 interface MovieDetailProps {
-    pathId: GhibliType['id']; // Tipo correcto para pathId
+    pathId: GhibliType['id'];
 }
 
 const MovieDetail = ({ pathId }: MovieDetailProps) => {
@@ -48,4 +47,4 @@ const MovieDetail = ({ pathId }: MovieDetailProps) => {
     );
 };
 
-export default MovieDetail; // Asegúrate de exportar correctamente
+export default MovieDetail; 
