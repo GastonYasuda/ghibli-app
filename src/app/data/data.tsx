@@ -1,7 +1,7 @@
-import { GhibiliDirectorType, GhibiliType } from "@/Types/ghibliType";
+import { GhibliDirectorType, GhibliType } from "@/Types/ghibliType";
 
 //GET BY ID
-export const fetchGhibliById = async (id: GhibiliType['id']) => {
+export const fetchGhibliById = async (id: GhibliType['id']) => {
     const data = await fetch(`https://ghibliapi.vercel.app/films/${id}`);
     return data.json();
 };
@@ -23,7 +23,7 @@ export const fetchGhibliByDirector = async () => {
     const ghibliDirectors: string[] = [...new Set(ghibliAllMovies.map(movie => movie.director))];
 
     // Crear un array de directores con sus películas
-    const directorsAndMovies: GhibiliDirectorType[] = ghibliDirectors.map(director => {
+    const directorsAndMovies: GhibliDirectorType[] = ghibliDirectors.map(director => {
         const moviesFromDirector = ghibliAllMovies.filter(movie => movie.director === director);
         return {
             name: director,
@@ -43,9 +43,9 @@ export const fetchGhibliByDirector = async () => {
 
 
 //GET BY TITLE
-export const fetchGhibli = async (title: GhibiliType['title']) => {
+export const fetchGhibli = async (title: GhibliType['title']) => {
     const data = await fetch("https://ghibliapi.vercel.app/films");
-    const movies: GhibiliType[] = await data.json();
+    const movies: GhibliType[] = await data.json();
 
     // Filter movies by title (case-insensitive)
     const filteredMovies = movies.filter(movie =>

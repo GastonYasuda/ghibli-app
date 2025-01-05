@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { GhibiliType } from "@/Types/ghibliType"
+import { GhibliType } from "@/Types/ghibliType"
 import { fetchGhibliById } from "../../data/data"
 import { useEffect, useState } from "react";
 
 
-export default function MovieDetail({ pathId }: GhibiliType['id']) {
+export default function MovieDetail({ pathId }: GhibliType['id']) {
 
     const [loading, setLoading] = useState(true);
-    const [movieByPathId, setMovieByPathId] = useState<GhibiliType | null>(null);
+    const [movieByPathId, setMovieByPathId] = useState<GhibliType | null>(null);
 
 
 

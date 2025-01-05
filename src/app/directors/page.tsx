@@ -1,12 +1,12 @@
 'use client'
 import { useEffect, useState } from "react";
 import { fetchGhibliByDirector } from "../data/data";
-import { GhibiliDirectorType } from "@/Types/ghibliType";
+import { GhibliDirectorType } from "@/Types/ghibliType";
 import ShowDirectorsMovies from "../components/ShowDirectorsMovies";
 
 export default function DirectorPage() {
 
-    const [movieByDirector, setMovieByDirector] = useState<GhibiliDirectorType[]>([]);
+    const [movieByDirector, setMovieByDirector] = useState<GhibliDirectorType[]>([]);
 
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function DirectorPage() {
                 return (
                     <>
                         <h1 key={i}>{director.name}</h1>
-                        <ShowDirectorsMovies eachDirectorMovie={director.movies} />
+                        <ShowDirectorsMovies movies={director.movies} />
                     </>
                 )
             })}

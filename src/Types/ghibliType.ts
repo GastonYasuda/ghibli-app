@@ -1,4 +1,4 @@
-export interface GhibiliType {
+export interface GhibliType {
     id:                       string | undefined;
     title:                    string;
     original_title:           string;
@@ -18,7 +18,7 @@ export interface GhibiliType {
     url:                      string;
    }
 
-   export interface GhibiliDirectorType{
+   export interface GhibliDirectorType{
     name: string;
-    movies: GhibiliType[];
+    movies: GhibliType[];
    }
