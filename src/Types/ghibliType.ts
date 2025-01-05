@@ -1,5 +1,5 @@
 export interface GhibiliType {
-    id:                       string;
+    id:                       string | undefined;
     title:                    string;
     original_title:           string;
     original_title_romanised: string;
@@ -16,4 +16,9 @@ export interface GhibiliType {
     locations:                string[];
     vehicles:                 string[];
     url:                      string;
+   }
+
+   export interface GhibiliDirectorType{
+    name: string;
+    movies: GhibiliType[];
    }
