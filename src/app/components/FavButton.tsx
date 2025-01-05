@@ -8,7 +8,7 @@ import { GhibliContextProviderProps } from '@/Types/ghibliType';
 import { GhibliContext } from '@/Context/Context';
 
 interface favButtonPropr {
-    favMovie: GhibliType;
+    favMovie: GhibliType | undefined;
 }
 
 export default function FavButton({ favMovie }: favButtonPropr) {
@@ -19,7 +19,7 @@ export default function FavButton({ favMovie }: favButtonPropr) {
 
 
     useEffect(() => {
-        if (favoritesArray.some((eachMovie) => eachMovie.id === favMovie.id)) {
+        if (favoritesArray.some((eachMovie) => eachMovie.id === favMovie?.id)) {
             setFav(true);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,14 +37,16 @@ export default function FavButton({ favMovie }: favButtonPropr) {
 
         } else {
             setFav(true);
-            setFavoritesArray((prev) => [...prev, favMovie])
+            if (favMovie) {
+                setFavoritesArray((prev) => [...prev, favMovie])
+            }
 
         }
 
     };
 
     return (
-        <button onClick={() => AddFav(favMovie.id)} >
+        <button onClick={() => AddFav(favMovie?.id)} >
             {fav ? <Image src={favoriteButton} alt="fav" /> : <Image src={notFavoriteButton} alt="not fav" />}
         </button>
     )
