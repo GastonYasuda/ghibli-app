@@ -13,8 +13,6 @@ export default function DirectorPage() {
         const getDirectorData = async () => {
             try {
                 const directorsAndMovies = await fetchGhibliByDirector();
-                console.log(directorsAndMovies);
-
                 setMovieByDirector(directorsAndMovies);
             } catch (error) {
                 console.error("Error fetching director:", error);
@@ -24,15 +22,8 @@ export default function DirectorPage() {
 
     }, [])
 
-
-
-
-
-
-
     return (
         <>
-            <h1>hola soy directors</h1>
             {movieByDirector.map((director, i) => {
                 return (
                     <div key={i}>
