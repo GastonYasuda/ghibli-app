@@ -9,6 +9,10 @@ export const fetchGhibli = async (title: GhibiliType['title']) => {
     const filteredMovies = movies.filter(movie =>
         movie.title.toLowerCase().includes(title.toLowerCase())
     );
-
     return filteredMovies
+};
+
+export const fetchGhibliById = async (id: GhibiliType['id']) => {
+    const data = await fetch(`https://ghibliapi.vercel.app/films/${id}`);
+    return data.json();
 };

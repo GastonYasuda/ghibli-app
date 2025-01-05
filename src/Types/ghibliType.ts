@@ -16,4 +16,4 @@ export interface GhibiliType {
     locations:                string[];
     vehicles:                 string[];
     url:                      string;
-}
+   }

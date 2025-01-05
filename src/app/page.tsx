@@ -1,22 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
-import { fetchGhibli } from "./data/data";
+// import CoverImage from "./components/CoverImage";
+import ShowAllMovies from "./components/ShowAllMovies"
 
-export default async function Home() {
-
-  const ghibliAllFilms = await fetchGhibli('')
-
+export default function HomePage() {
 
   return (
-    <div>
+    <div className="flex flex-col">
 
-      {ghibliAllFilms.map((eachMovie, index) => {
-        return (
-          <div key={index} className="mb:w-full">
-            <h1>{eachMovie.title}</h1>
-            <img src={eachMovie.image} alt="Movie poster" />
-          </div>
-        )
-      })}
+      {/* <CoverImage /> */}
+
+      <ShowAllMovies />
 
     </div>
   );
