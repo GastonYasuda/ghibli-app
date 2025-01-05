@@ -1,23 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
-import { GhibliType } from "@/Types/ghibliType"
-import { fetchGhibliById } from "../../data/data"
-import { useEffect, useState } from "react";
-import FavButton from "@/app/components/FavButton";
+// src/app/[title]/movieDetail/page.tsx
 
-interface movieDetailProps {
-    pathId?: string;
+'use client'; // Asegúrate de usar 'use client' si estás trabajando con código de cliente en Next.js 13
+
+import { GhibliType } from "@/Types/ghibliType"; // Asegúrate de que la ruta de importación sea correcta
+import { fetchGhibliById } from "../../data/data"; // Verifica la ruta correcta
+import { useEffect, useState } from "react";
+
+interface MovieDetailProps {
+    pathId: GhibliType['id']; // Tipo correcto para pathId
 }
 
-export default function MovieDetail({ pathId }: movieDetailProps) {
-
+const MovieDetail = ({ pathId }: MovieDetailProps) => {
     const [loading, setLoading] = useState(true);
-    const [movieByPathId, setMovieByPathId] = useState<GhibliType>();
-
-
+    const [movieByPathId, setMovieByPathId] = useState<GhibliType | null>(null);
 
     useEffect(() => {
-
         const fetchMovie = async () => {
             try {
                 setLoading(true);
@@ -29,23 +27,25 @@ export default function MovieDetail({ pathId }: movieDetailProps) {
                 setLoading(false);
             }
         };
+
         if (pathId) {
             fetchMovie();
         }
-
     }, [pathId]);
 
     return (
         <div>
-            {loading ? <p>Loading...</p> :
-                <div key={movieByPathId?.id}>
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <>
                     <h1>Movie Detail</h1>
-
-                    <FavButton favMovie={movieByPathId} />
-
                     <p>{movieByPathId?.title}</p>
                     <img src={movieByPathId?.image} alt="movie poster" />
-                </div>}
+                </>
+            )}
         </div>
-    )
-}
+    );
+};
+
+export default MovieDetail; // Asegúrate de exportar correctamente
