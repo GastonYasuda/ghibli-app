@@ -3,8 +3,11 @@ import { GhibliType } from "@/Types/ghibliType"
 import { fetchGhibliById } from "../../data/data"
 import { useEffect, useState } from "react";
 
+interface movieDetailProps {
+    pathId: GhibliType['id']
+}
 
-export default function MovieDetail({ pathId }: GhibliType['id']) {
+export default function MovieDetail({ pathId }: movieDetailProps) {
 
     const [loading, setLoading] = useState(true);
     const [movieByPathId, setMovieByPathId] = useState<GhibliType | null>(null);

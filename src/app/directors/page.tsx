@@ -35,13 +35,12 @@ export default function DirectorPage() {
             <h1>hola soy directors</h1>
             {movieByDirector.map((director, i) => {
                 return (
-                    <>
-                        <h1 key={i}>{director.name}</h1>
+                    <div key={i}>
+                        <h1>{director.name}</h1>
                         <ShowDirectorsMovies movies={director.movies} />
-                    </>
+                    </div>
                 )
             })}
-            {/* <ShowDirectors directorSelected={directorSelected} /> */}
         </>
     )
 }
