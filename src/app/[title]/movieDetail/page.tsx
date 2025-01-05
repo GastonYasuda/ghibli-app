@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// src/app/[title]/movieDetail/page.tsx
 
 'use client';
 import { GhibliType } from "@/Types/ghibliType";
