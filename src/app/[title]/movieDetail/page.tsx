@@ -5,14 +5,15 @@
 import { GhibliType } from "@/Types/ghibliType";
 import { fetchGhibliById } from "../../data/data";
 import { useEffect, useState } from "react";
+import FavButton from "@/app/components/FavButton";
 
 interface MovieDetailProps {
     pathId: GhibliType['id'];
 }
 
-const MovieDetail = ({ pathId }: MovieDetailProps) => {
+export default function MovieDetail({ pathId }: MovieDetailProps) {
     const [loading, setLoading] = useState(true);
-    const [movieByPathId, setMovieByPathId] = useState<GhibliType | null>(null);
+    const [movieByPathId, setMovieByPathId] = useState<GhibliType>();
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -39,6 +40,8 @@ const MovieDetail = ({ pathId }: MovieDetailProps) => {
             ) : (
                 <>
                     <h1>Movie Detail</h1>
+                    <FavButton favMovie={movieByPathId} />
+
                     <p>{movieByPathId?.title}</p>
                     <img src={movieByPathId?.image} alt="movie poster" />
                 </>
@@ -47,4 +50,3 @@ const MovieDetail = ({ pathId }: MovieDetailProps) => {
     );
 };
 
-export default MovieDetail; 
