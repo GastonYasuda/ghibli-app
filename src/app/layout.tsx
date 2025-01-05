@@ -16,11 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/Favicon.ico" />
-      </head>
-      <GhibliContextProvider>
+    <GhibliContextProvider>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/Favicon.ico" />
+        </head>
         <body className={`${redHatDisplay.className} antialiased`}>
           <div className="flex h-screen">
 
@@ -34,7 +34,7 @@ export default function RootLayout({
 
           </div>
         </body>
-      </GhibliContextProvider>
-    </html >
+      </html >
+    </GhibliContextProvider>
   );
 }

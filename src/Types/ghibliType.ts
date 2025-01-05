@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 export interface GhibliType {
     id:                       string | undefined;
@@ -26,5 +26,6 @@ export interface GhibliType {
    }
 
    export interface GhibliContextProviderProps{
-    children: ReactNode;
+    favoritesArray: GhibliType[];
+    setFavoritesArray:Dispatch<SetStateAction<GhibliType[]>>;
    }

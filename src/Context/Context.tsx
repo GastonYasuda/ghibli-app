@@ -1,20 +1,26 @@
 'use client'
-import { GhibliContextProviderProps, GhibliType } from "@/Types/ghibliType";
-import { createContext, useEffect, useState } from "react";
+import { GhibliType } from "@/Types/ghibliType";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 export const GhibliContext = createContext({});
 
-export function GhibliContextProvider({ children }: GhibliContextProviderProps) {
+interface Props {
+    children: ReactNode;
+}
 
-    const [favoritesArray, setFavoritesArray] = useState<GhibliType[]>(() => {
-        const storedFavs = JSON.parse(localStorage.getItem('GhibliFavMovie') || '[]');
-        return storedFavs;
-    })
+export function GhibliContextProvider({ children }: Props) {
+
+    const [favoritesArray, setFavoritesArray] = useState<GhibliType[]>([])
 
     useEffect(() => {
-        localStorage.setItem("GhibliFavMovie", JSON.stringify(favoritesArray));
+        const storedFavs = JSON.parse(localStorage.getItem("GhibliFavMovie") || "[]");
+        setFavoritesArray(storedFavs);
+    }, []);
 
-    }, [favoritesArray])
+    // save the favorites in LocalStorage
+    useEffect(() => {
+        localStorage.setItem("GhibliFavMovie", JSON.stringify(favoritesArray));
+    }, [favoritesArray]);
 
 
     return (
