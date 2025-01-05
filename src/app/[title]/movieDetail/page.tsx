@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+'use client'
 
 import { GhibliType } from "@/Types/ghibliType";
 import { fetchGhibliById } from "../../data/data";
