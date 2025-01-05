@@ -1,5 +1,5 @@
 "use client"
-import MovieDetail from "./movieDetail/page";
+import MovieDetail from "./movieDetail/movieDetail";
 import { usePathname } from "next/navigation";
 
 export default function ShowByTitle() {
