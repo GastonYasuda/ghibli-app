@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface GhibliType {
     id:                       string | undefined;
     title:                    string;
@@ -21,4 +23,8 @@ export interface GhibliType {
    export interface GhibliDirectorType{
     name: string;
     movies: GhibliType[];
+   }
+
+   export interface GhibliContextProviderProps{
+    children: ReactNode;
    }

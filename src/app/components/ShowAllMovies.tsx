@@ -1,10 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
+'use client'
 import Link from "next/link";
 import { fetchGhibli } from "../data/data";
+import { useEffect, useState } from "react";
+import { GhibliType } from "@/Types/ghibliType";
 
-export default async function Home() {
+import FavButton from "./FavButton";
 
-    const ghibliAllMovies = await fetchGhibli('')
+
+
+export default function Home() {
+    const [showGhibliAllMovies, setShowGhibliAllMovies] = useState<GhibliType[]>([]);
+
+    useEffect(() => {
+
+        const showAllMovies = async () => {
+            try {
+                const ghibliAllMovies = await fetchGhibli('')
+                setShowGhibliAllMovies(ghibliAllMovies)
+
+            } catch (error) {
+                console.error('Error fetching All Movies', error)
+            }
+
+        }
+        showAllMovies()
+
+    }, [])
+
+
 
 
     return (
@@ -13,11 +37,17 @@ export default async function Home() {
 
             <div className="flex flex-row flex-wrap gap-5">
 
-                {ghibliAllMovies.map((eachMovie) => {
+                {showGhibliAllMovies.map((eachMovie) => {
                     return (
-                        <Link key={eachMovie.id} href={`${eachMovie.id}`}>
-                            <img src={eachMovie.image} alt="Movie poster" className="w-60 rounded-lg ease-linear duration-300 hover:scale-[1.05]" />
-                        </Link>
+                        <div key={eachMovie.id}>
+
+                            <FavButton favMovie={eachMovie} />
+
+
+                            <Link key={eachMovie.id} href={`${eachMovie.id}`}>
+                                <img src={eachMovie.image} alt="Movie poster" className="w-60 rounded-lg ease-linear duration-300 hover:scale-[1.05]" />
+                            </Link>
+                        </div>
                     )
                 })}
 
@@ -25,3 +55,16 @@ export default async function Home() {
         </div>
     );
 }
+
+
+
+// if (fav) {
+//     // If is Fav, remove from array
+//     setFavorites((prev) => prev.filter((book) => book.ISBN !== bookClick.ISBN));
+//     setFav(false);
+//     removeNotify()
+// } else {
+//     setFavorites((prev) => [...prev, bookClick]);
+//     setFav(true);
+//     addNotify()
+// }

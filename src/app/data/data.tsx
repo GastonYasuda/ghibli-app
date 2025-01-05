@@ -7,14 +7,6 @@ export const fetchGhibliById = async (id: GhibliType['id']) => {
 };
 
 
-
-
-
-
-
-
-
-
 //GET BY DIRECTOR
 export const fetchGhibliByDirector = async () => {
     const ghibliAllMovies = await fetchGhibli('');
@@ -32,14 +24,6 @@ export const fetchGhibliByDirector = async () => {
     });
     return directorsAndMovies;
 };
-
-
-
-
-
-
-
-
 
 
 //GET BY TITLE
