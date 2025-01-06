@@ -46,8 +46,8 @@ export default function FavButton({ favMovie }: favButtonPropr) {
     };
 
     return (
-        <button onClick={() => AddFav(favMovie?.id)} >
-            {fav ? <Image src={favoriteButton} alt="fav" /> : <Image src={notFavoriteButton} alt="not fav" />}
+        <button onClick={() => AddFav(favMovie?.id)} className="absolute z-10 right-2 top-2">
+            {fav ? <Image src={favoriteButton} alt="fav" className='w-10 opacity-80 hover:opacity-100 ease-linear duration-300' /> : <Image src={notFavoriteButton} alt="not fav" className='w-10 opacity-50 hover:opacity-100 ease-linear duration-300' />}
         </button>
     )
 }

@@ -24,11 +24,11 @@ export default function RootLayout({
         <body className={`${redHatDisplay.className} antialiased`}>
           <div className="flex h-screen">
 
-            <div className="w-full flex flex-col md:flex-row ">
+            <div className="w-full flex flex-col md:flex-row">
 
               <Sidebar />
 
-              <div className="md:w-full flex-grow p-6 md:p-12">{children}</div>
+              <div className="md:w-full flex-grow p-6 md:pl-60 ">{children}</div>
 
             </div>
 

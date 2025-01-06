@@ -29,8 +29,6 @@ export default function Home() {
     }, [])
 
 
-
-
     return (
 
         <div className="flex flex-col" >
@@ -39,13 +37,15 @@ export default function Home() {
 
                 {showGhibliAllMovies.map((eachMovie) => {
                     return (
-                        <div key={eachMovie.id}>
+                        <div key={eachMovie.id} className="relative">
 
                             <FavButton favMovie={eachMovie} />
 
 
                             <Link key={eachMovie.id} href={`${eachMovie.id}`}>
-                                <img src={eachMovie.image} alt="Movie poster" className="w-60 rounded-lg ease-linear duration-300 hover:scale-[1.05]" />
+                                <div className="w-60 rounded-lg  overflow-hidden">
+                                    <img src={eachMovie.image} alt="Movie poster" className="ease-linear duration-300 hover:scale-[1.1] hover:opacity-70" />
+                                </div>
                             </Link>
                         </div>
                     )
