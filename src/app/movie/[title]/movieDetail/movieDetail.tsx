@@ -2,10 +2,10 @@
 'use client'
 
 import { GhibliType } from "@/Types/ghibliType";
-import { fetchGhibliById } from "../../data/data";
 import { useEffect, useState } from "react";
 import FavButton from "@/app/components/FavButton";
 import Link from "next/link";
+import { fetchGhibliById } from "@/app/data/data";
 
 interface MovieDetailProps {
     pathId: GhibliType['id'];
@@ -52,7 +52,7 @@ export default function MovieDetail({ pathId }: MovieDetailProps) {
                         <p>{movieByPathId?.original_title}</p>
                         <p>{movieByPathId?.description}</p>
                         <p>{movieByPathId?.release_date}</p>
-                        <Link href={`/director/${movieByPathId?.director}`}>
+                        <Link href={`/directors/${movieByPathId?.director}`}>
                             <p>{movieByPathId?.director}</p>
                         </Link>
 

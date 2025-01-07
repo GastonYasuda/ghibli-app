@@ -42,7 +42,7 @@ export default function Home() {
                             <FavButton favMovie={eachMovie} />
 
 
-                            <Link key={eachMovie.id} href={`${eachMovie.id}`}>
+                            <Link key={eachMovie.id} href={`/movie/${eachMovie.id}`}>
                                 <div className="w-60 rounded-lg  overflow-hidden">
                                     <img src={eachMovie.image} alt="Movie poster" className="ease-linear duration-300 hover:scale-[1.1] hover:opacity-70" />
                                 </div>

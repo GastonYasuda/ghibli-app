@@ -17,7 +17,7 @@ export default function ShowDirectorsMovies({ movies }: ShowDirectorsMoviesProps
 
                         <FavButton favMovie={movie} />
 
-                        <Link key={movie.id} href={`${movie.id}`}>
+                        <Link key={movie.id} href={`/movie/${movie.id}`}>
                             <img src={movie.image} alt="movie poster" className="w-60 rounded-lg ease-linear duration-300 hover:scale-[1.05]" />
                         </Link>
                     </div>

@@ -6,7 +6,6 @@ export const fetchGhibliById = async (id: GhibliType['id']) => {
     return data.json();
 };
 
-
 //GET BY DIRECTOR
 export const fetchGhibliByDirector = async () => {
     const ghibliAllMovies = await fetchGhibli('');
@@ -23,6 +22,25 @@ export const fetchGhibliByDirector = async () => {
         };
     });
     return directorsAndMovies;
+
+};
+
+
+//GET BY DIRECTOR NAME
+export const fetchGhibliByDirectorName = async (directorName: GhibliType['director']) => {
+    const ghibliAllMovies = await fetchGhibli('');
+
+    // Obtener todas las peliculas del director
+    const directorMovie = ghibliAllMovies.filter(movies =>
+        movies.director.toLowerCase().includes(directorName.toLowerCase())
+    );
+
+    // Crear un array de directores con sus películas
+    return {
+        name: directorName,
+        movies: directorMovie
+    };
+
 };
 
 
