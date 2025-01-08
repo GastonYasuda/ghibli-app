@@ -3,6 +3,7 @@ import "./Styles/globals.css";
 import { redHatDisplay } from "@/ui/fonts";
 import Sidebar from '../app/components/Sidebar';
 import { GhibliContextProvider } from "@/Context/Context";
+import { ToastContainer } from "react-toastify";
 
 
 export const metadata: Metadata = {
@@ -35,6 +36,8 @@ export default function RootLayout({
             </div>
 
           </div>
+          <ToastContainer />
+
         </body>
       </html >
     </GhibliContextProvider>

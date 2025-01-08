@@ -6,6 +6,8 @@ import Image from "next/image";
 import { useContext, useEffect, useState } from 'react';
 import { GhibliContextProviderProps } from '@/Types/ghibliType';
 import { GhibliContext } from '@/Context/Context';
+import { toast } from "react-toastify";
+
 
 interface favButtonPropr {
     favMovie: GhibliType | undefined;
@@ -25,6 +27,31 @@ export default function FavButton({ favMovie }: favButtonPropr) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    const addNotify = () => {
+        toast.success(`${favMovie?.title} Added to Favs!`, {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+    };
+    const removeNotify = () => {
+        toast.warn(`${favMovie?.title} Removed from Favs!`, {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+    };
+
 
     const AddFav = (id: GhibliType['id']) => {
 
@@ -33,12 +60,15 @@ export default function FavButton({ favMovie }: favButtonPropr) {
         if (fav) {
             setFavoritesArray((prev) => prev.filter((eachMovie) => eachMovie.id !== id))
             setFav(false);
+            removeNotify()
 
 
         } else {
             setFav(true);
             if (favMovie) {
                 setFavoritesArray((prev) => [...prev, favMovie])
+                addNotify()
+
             }
 
         }
