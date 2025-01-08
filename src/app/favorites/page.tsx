@@ -15,7 +15,7 @@ export default function FavoritesPage() {
             <h1 className="font-extrabold text-4xl text-center mb-8">Favorites</h1>
             <div className="flex flex-row gap-5 overflow-auto md:flex-wrap justify-center">
                 {favoritesArray.length === 0 ?
-                    <h1>NO TEM FAVS</h1>
+                    <h1>You don&apos;t have favorite movies</h1>
                     :
                     <>      {
                         favoritesArray.map((eachMovie) => {
