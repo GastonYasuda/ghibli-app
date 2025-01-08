@@ -9,6 +9,8 @@ interface ShowDirectorsMoviesProps {
 
 export default function ShowDirectorsMovies({ movies }: ShowDirectorsMoviesProps) {
 
+    console.log(movies);
+
     return (
         <div className="flex flex-row gap-5 overflow-auto md:flex-wrap justify-center mb-16">
             {movies.map(movie => {
