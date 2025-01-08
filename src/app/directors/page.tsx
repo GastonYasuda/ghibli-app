@@ -18,7 +18,6 @@ export default function DirectorPage({ directorId }: DirectorPageProps) {
 
     useEffect(() => {
 
-
         const getDirectorData = async () => {
             try {
                 if (directorId) {
@@ -38,24 +37,24 @@ export default function DirectorPage({ directorId }: DirectorPageProps) {
     }, [directorId])
 
     return (
-        <>{pathName !== 'directors' && movieByDirector !== undefined ?
-            <>
-                <h1>{movieByDirector.name}</h1>
-                <ShowDirectorsMovies movies={movieByDirector.movies} />
-
-            </>
-            :
-            <>
-                {AllmoviesByDirectorArray?.map((director, i) => {
-                    return (
-                        <div key={i}>
-                            <h1>{director.name}</h1>
-                            <ShowDirectorsMovies movies={director.movies} />
-                        </div>
-                    )
-                })}
-            </>
-        }
-        </>
+        <section className="ml-48">
+            {pathName !== 'directors' && movieByDirector !== undefined ?
+                <>
+                    <h1>{movieByDirector.name}</h1>
+                    <ShowDirectorsMovies movies={movieByDirector.movies} />
+                </>
+                :
+                <>
+                    {AllmoviesByDirectorArray?.map((director, i) => {
+                        return (
+                            <div key={i}>
+                                <h1 className="font-extrabold text-4xl text-center mb-8">{director.name}</h1>
+                                <ShowDirectorsMovies movies={director.movies} />
+                            </div>
+                        )
+                    })}
+                </>
+            }
+        </section>
     )
 }

@@ -26,9 +26,11 @@ export default function RootLayout({
 
             <div className="w-full flex flex-col md:flex-row">
 
+
               <Sidebar />
 
-              <div className="md:w-full flex-grow p-6 md:pl-60 ">{children}</div>
+
+              <div className="md:w-full  p-6 relative mb:pl-60">{children}</div>
 
             </div>
 

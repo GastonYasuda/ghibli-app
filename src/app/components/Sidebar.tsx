@@ -4,7 +4,7 @@ import NavLinks from './NavLinks';
 
 export default function SideNav() {
     return (
-        <div className='md:fixed'>
+        <div className='md:fixed z-50'>
 
             <div className="w-full p-4 bg-red-200 flex justify-start md:flex-1 md:h-screen">
 

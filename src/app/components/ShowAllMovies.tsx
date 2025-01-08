@@ -31,9 +31,11 @@ export default function Home() {
 
     return (
 
-        <div className="flex flex-col" >
+        <div className="flex flex-col ml-48" >
+            <h1 className="font-extrabold text-4xl text-center mb-8">Ghibli Movies</h1>
 
-            <div className="flex flex-row flex-wrap gap-5">
+
+            <div className="flex flex-row gap-5 overflow-auto md:flex-wrap justify-center">
 
                 {showGhibliAllMovies.map((eachMovie) => {
                     return (
@@ -56,15 +58,3 @@ export default function Home() {
     );
 }
 
-
-
-// if (fav) {
-//     // If is Fav, remove from array
-//     setFavorites((prev) => prev.filter((book) => book.ISBN !== bookClick.ISBN));
-//     setFav(false);
-//     removeNotify()
-// } else {
-//     setFavorites((prev) => [...prev, bookClick]);
-//     setFav(true);
-//     addNotify()
-// }
