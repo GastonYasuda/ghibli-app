@@ -7,8 +7,11 @@ import { usePathname } from "next/navigation";
 
 export default function DirectorPage() {
 
+    // 
+
     const pathName = usePathname()
-    const pathNameReplace = pathName.replace(/%20/g, " ").split("/").pop();
+    const pathNamePop = pathName.replace(/%20/g, " ").split("/").pop();
+    const pathNameReplace = pathNamePop && decodeURIComponent(pathNamePop)
 
     const [movieByDirector, setMovieByDirector] = useState<GhibliDirectorType>();
 
@@ -35,7 +38,7 @@ export default function DirectorPage() {
     return (
         <section className="ml-48">
             <div className="font-extrabold text-4xl text-center mb-8">
-                <h1>{movieByDirector?.name}</h1>
+                <h1 className="font-extrabold text-4xl text-center mb-8">{movieByDirector?.name}</h1>
                 {movieByDirector && <ShowDirectorsMovies movies={movieByDirector.movies} />}
             </div>
         </section>

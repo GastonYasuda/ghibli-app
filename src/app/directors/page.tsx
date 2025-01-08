@@ -33,7 +33,7 @@ export default function DirectorByNamePage() {
         <>
             {AllmoviesByDirectorArray?.map((director, i) => {
                 return (
-                    <div key={i}>
+                    <div key={i} className="ml-48">
                         <h1 className="font-extrabold text-4xl text-center mb-8">{director.name}</h1>
                         <ShowDirectorsMovies movies={director.movies} />
                     </div>
