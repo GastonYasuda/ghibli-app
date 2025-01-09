@@ -31,7 +31,7 @@ export default function RootLayout({
               <Sidebar />
 
 
-              <div className="md:w-full p-6 relative mb:pl-60">{children}</div>
+              <div className="md:w-full relative md:pl-52 overflow-hidden mx-1.5">{children}</div>
 
             </div>
 

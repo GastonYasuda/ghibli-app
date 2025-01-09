@@ -39,22 +39,17 @@ export default function MovieDetail({ pathId }: MovieDetailProps) {
                 <p>Loading...</p>
             ) : (
                 <div>
-                    <section className="relative z-20">
+                    <section className="relative z-20 pt-8">
                         <div className="text-center">
                             <span className="font-extrabold text-4xl mb-8">{movieByPathId?.title}</span>
                             <h5 className="mb-7">{movieByPathId?.original_title}</h5>
                         </div>
-
-
                         <div className="flex w-1/2 m-auto">
-
-                            <div className="flex-1 w-60 relative">
+                            <div className="flex-1 w-48 relative">
                                 <FavButton favMovie={movieByPathId} />
-                                <img src={movieByPathId?.image} alt="movie poster" className="rounded-lg" />
+                                <img src={movieByPathId?.image} alt="movie poster" className="rounded-lg mb-16" />
                             </div>
-
-
-                            <section className="flex-1 ml-14 h-full bg-white/50 backdrop-blur-md p-5 rounded-lg">
+                            <section className="flex-1 ml-14 h-full bg-white/50 backdrop-blur-md p-5 rounded-lg mb-16">
                                 <h6 className="font-black">Sinopsis:</h6>
                                 <p>{movieByPathId?.description}</p>
                                 <p>Year: {movieByPathId?.release_date}</p>
@@ -68,8 +63,8 @@ export default function MovieDetail({ pathId }: MovieDetailProps) {
                         </div>
                     </section>
 
-                    <div className="h-full top-0 absolute overflow-hidden blur-md opacity-70">
-                        <img src={movieByPathId?.movie_banner} alt="movie banner" className="w-screen -z-10" />
+                    <div className="absolute h-full top-0 blur-md opacity-70">
+                        <img src={movieByPathId?.movie_banner} alt="movie banner" className="w-screen h-screen -z-10" />
                     </div>
                 </div>
             )}

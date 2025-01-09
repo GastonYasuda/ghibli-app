@@ -34,11 +34,11 @@ export default function DirectorPage() {
     }, [])
 
     return (
-        <section className="ml-48">
+        <>
             <div className="font-extrabold text-4xl text-center mb-8">
-                <h1 className="font-extrabold text-4xl text-center mb-8">{movieByDirector?.name}</h1>
+                <h1 className="font-extrabold text-4xl text-center mt-8 mb-8">{movieByDirector?.name}</h1>
                 {movieByDirector && <ShowDirectorsMovies movies={movieByDirector.movies} />}
             </div>
-        </section>
+        </>
     )
 }

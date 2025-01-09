@@ -15,16 +15,12 @@ export default function DirectorByNamePage() {
 
             try {
                 const directorsAndMovies = await fetchGhibliByDirector();
-
                 setAllMoviesByDirectorArray(directorsAndMovies);
             } catch (error) {
                 console.error("Error fetching director:", error);
-
             }
         }
         getDirectorMovies()
-
-
     }, [])
 
 
@@ -32,8 +28,8 @@ export default function DirectorByNamePage() {
         <>
             {AllmoviesByDirectorArray?.map((director, i) => {
                 return (
-                    <div key={i} className="ml-48">
-                        <h1 className="font-extrabold text-4xl text-center mb-8">{director.name}</h1>
+                    <div key={i} className="flex flex-col">
+                        <h1 className="font-extrabold text-4xl text-center mt-8 mb-8">{director.name}</h1>
                         <ShowDirectorsMovies movies={director.movies} />
                     </div>
                 )
