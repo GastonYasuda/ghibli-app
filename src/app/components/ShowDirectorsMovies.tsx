@@ -10,7 +10,7 @@ interface ShowDirectorsMoviesProps {
 export default function ShowDirectorsMovies({ movies }: ShowDirectorsMoviesProps) {
 
     return (
-        <div className={`flex flex-row gap-2 overflow-auto md:flex-wrap justify-start md:justify-center mb-16 ${movies.length <= 2 && `justify-center`}`}>
+        <div className={`flex flex-row gap-2 overflow-auto flex-wrap justify-center mb-16 ${movies.length <= 2 && `justify-center`}`}>
             {movies.map(movie => {
                 return (
                     <div key={movie.id} className="relative">

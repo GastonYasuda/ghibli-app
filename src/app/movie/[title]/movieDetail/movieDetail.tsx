@@ -44,21 +44,26 @@ export default function MovieDetail({ pathId }: MovieDetailProps) {
                             <span className="font-extrabold text-4xl mb-8">{movieByPathId?.title}</span>
                             <h5 className="mb-7">{movieByPathId?.original_title}</h5>
                         </div>
-                        <div className="flex w-1/2 m-auto">
-                            <div className="flex-1 w-48 relative">
+                        <div className="flex flex-col md:flex-row md:gap-5 md:w-1/2 w-10/12 m-auto">
+                            <div className="md:flex-1 md:w-48 w-full relative">
                                 <FavButton favMovie={movieByPathId} />
-                                <img src={movieByPathId?.image} alt="movie poster" className="rounded-lg mb-16" />
+                                <img src={movieByPathId?.image} alt="movie poster" className="rounded-lg md:mb-16 mb-11" />
                             </div>
-                            <section className="flex-1 ml-14 h-full bg-white/50 backdrop-blur-md p-5 rounded-lg mb-16">
-                                <h6 className="font-black">Sinopsis:</h6>
-                                <p>{movieByPathId?.description}</p>
-                                <p>Year: {movieByPathId?.release_date}</p>
-                                <div className="inline-flex gap-1">
-                                    <span>Director:</span>
-                                    <Link href={`/directors/${movieByPathId?.director}`}>
-                                        <p className="text-blue-600 hover:text-blue-900">{movieByPathId?.director}</p>
-                                    </Link>
+
+                            <section className="md:flex-1 h-full bg-white/50 backdrop-blur-md p-5 rounded-lg">
+                                <div className="flex flex-col w-10/12 m-auto">
+
+                                    <h6 className="font-black">Sinopsis:</h6>
+                                    <p>{movieByPathId?.description}</p>
+                                    <p>Year: {movieByPathId?.release_date}</p>
+                                    <div className="inline-flex gap-1">
+                                        <span>Director:</span>
+                                        <Link href={`/directors/${movieByPathId?.director}`}>
+                                            <p className="text-blue-600 hover:text-blue-900">{movieByPathId?.director}</p>
+                                        </Link>
+                                    </div>
                                 </div>
+
                             </section>
                         </div>
                     </section>

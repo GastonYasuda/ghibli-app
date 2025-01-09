@@ -23,7 +23,7 @@ export default function RootLayout({
           <link rel="icon" href="/Favicon.ico" />
         </head>
         <body className={`${redHatDisplay.className} antialiased`}>
-          <div className="flex h-full pb-2">
+          <div className="flex h-full pb-2 bg-red-50">
 
             <div className="w-full flex flex-col md:flex-row">
 
@@ -31,7 +31,7 @@ export default function RootLayout({
               <Sidebar />
 
 
-              <div className="md:w-full relative md:pl-52 overflow-hidden mx-1.5">{children}</div>
+              <div className="md:w-full relative md:pl-52 mx-1.5">{children}</div>
 
             </div>
 

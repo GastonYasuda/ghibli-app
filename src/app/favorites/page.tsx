@@ -13,7 +13,9 @@ export default function FavoritesPage() {
     return (
         <>
             <h1 className="font-extrabold text-4xl text-center mt-8 mb-8">Favorites</h1>
-            <div className={`flex flex-row gap-2 overflow-auto md:flex-wrap justify-start md:justify-center ${favoritesArray.length <= 2 && `justify-center`}`}>
+            <div className={`flex flex-row gap-2 overflow-auto flex-wrap justify-center mb-16 ${favoritesArray.length <= 2 && `justify-center`}`}>
+                {/* <div className={`flex flex-row gap-2 overflow-auto flex-wrap justify-center mb-16 ${movies.length <= 2 && `justify-center`}`}> */}
+
                 {favoritesArray.length === 0 ?
                     <h1>You don&apos;t have favorite movies</h1>
                     :
