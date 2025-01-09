@@ -5,6 +5,7 @@ import { GhibliContextProviderProps } from "@/Types/ghibliType"
 import { useContext } from "react"
 import FavButton from "../components/FavButton"
 import Link from "next/link"
+import notMovies from "../../../public/favsImg.png"
 
 export default function FavoritesPage() {
 
@@ -17,7 +18,10 @@ export default function FavoritesPage() {
                 {/* <div className={`flex flex-row gap-2 overflow-auto flex-wrap justify-center mb-16 ${movies.length <= 2 && `justify-center`}`}> */}
 
                 {favoritesArray.length === 0 ?
-                    <h1>You don&apos;t have favorite movies</h1>
+                    <section className="flex flex-col items-center">
+                        <h1>You don&apos;t have favorite movies</h1>
+                        <img src={notMovies.src} alt="Not movies" className="md:w-3/4" />
+                    </section>
                     :
                     <>      {
                         favoritesArray.map((eachMovie) => {
