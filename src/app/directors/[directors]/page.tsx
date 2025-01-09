@@ -17,8 +17,6 @@ export default function DirectorPage() {
 
 
     useEffect(() => {
-        console.log(pathNameReplace?.toLowerCase());
-
 
         const getDirectorData = async () => {
             try {

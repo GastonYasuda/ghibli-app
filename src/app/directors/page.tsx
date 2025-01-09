@@ -15,7 +15,6 @@ export default function DirectorByNamePage() {
 
             try {
                 const directorsAndMovies = await fetchGhibliByDirector();
-                console.log(directorsAndMovies);
 
                 setAllMoviesByDirectorArray(directorsAndMovies);
             } catch (error) {
